@@ -12,10 +12,10 @@ $ ls /dev/cpu/0/msr
 $ sudo modprobe msr
 ```
 
-This library is a new WIP, and currently only reading is supported.
+This library is a new WIP, and breaking changes should be expected.
 
 
-## Example
+## Usage
 
 `gomsr` has no dependencies, and is super easy to use:
 
@@ -29,8 +29,12 @@ if err != nil {
 	log.Fatalf("Error: %s", err)
 }
 
-fmt.Printf("Got 0x%x\n", data)
-    
+//You can also write to MSRs
+err := WriteMSR(0, 0x401, 0)
+if err != nil {
+	log.Fatalf("Error: %s", err)
+}
+
 //You can also create an msr handler. This is suited for repeated reads/writes
 
 //the MSR() init function just takes a CPU
@@ -39,7 +43,7 @@ if err != nil {
 	log.Fatalf("Error: %s", err)
 }
 
-data, err := msr.Read()
+data, err := msr.Read(0x610)
 if err != nil {
 	log.Fatalf("Error: %s", err)
 }
