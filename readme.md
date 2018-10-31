@@ -1,5 +1,8 @@
 # gomsr
 
+[![GoDoc](https://godoc.org/github.com/fearful-symmetry/gomsr?status.svg)](https://godoc.org/github.com/fearful-symmetry/gomsr)
+[![Go Report Card](https://goreportcard.com/badge/github.com/fearful-symmetry/gomsr)](https://goreportcard.com/report/github.com/fearful-symmetry/gomsr)
+
 `gomsr` is a library for reading from and writing to [MSRs](https://en.wikipedia.org/wiki/Model-specific_register). It'll work on any linux machine that supports the `msr` kernel module. It also supports setting a custom character device location, allowing `gomsr` to work with utilities such as [msr-safe](https://github.com/llnl/msr-safe).
 
 A quick and dirty check to see if this will work on your system:

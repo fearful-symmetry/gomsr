@@ -18,7 +18,7 @@ func (d MSRDev) Close() error {
 	return syscall.Close(d.fd)
 }
 
-//MSR provides an interface for reoccouring access to a given CPU's MSR interface
+//MSR provides an interface for reoccurring access to a given CPU's MSR interface
 func MSR(cpu int) (MSRDev, error) {
 	cpuDir := fmt.Sprintf(defaultFmtStr, cpu)
 	fd, err := syscall.Open(cpuDir, syscall.O_RDWR, 777)
